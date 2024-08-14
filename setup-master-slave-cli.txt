@@ -140,7 +140,7 @@ Kubeadm doesn’t install metrics server component during its initialization.
 $ kubectl apply -f https://raw.githubusercontent.com/techiescamp/kubeadm-scripts/main/manifests/metrics-server.yaml
 $ kubectl top nodes
 
-$ kubectl create deployment lwdeploy1 --image=vimal13/apache-webserver-php --replicas=5
+$ kubectl create deployment lwdeploy1 --image=amarendrazero/system-metrics-website:V1 --replicas=5
 $ kubectl expose deployment lwdeploy1 --type=NodePort --port=80
 
 $ kubectl edit deploy lwdeploy1
@@ -153,8 +153,8 @@ spec:
         region: india
 
 
-$ kubectl  exec -it lwdeploy1-67465f89c6-2qlw5 -- bash
-[root@lwdeploy1-67465f89c6-2qlw5 /]# curl  192.168.201.1
+$ kubectl  exec -it <deployment-name> -- bash
+[root@mydeploy1-67465f89c6-2qlw5 /]# curl  192.168.201.1
 
 
 
